@@ -1,6 +1,7 @@
 
 <h1> Rearrangement Planning for General Part Assembly </h1>
 
+![teaser](assets/gpat_teaser.jpg)
 
 [Yulong Li](https://www.columbia.edu/~yl4095/)<sup>1</sup>,
 [Andy Zeng](https://andyzeng.github.io)<sup>2</sup>,
@@ -12,8 +13,6 @@
 [Project Page](https://general-part-assembly.github.io) | [arXiV](https://arxiv.org/abs/2307.00206)
 
 <br>
-
-![teaser](assets/gpat_teaser.jpg)
 
 ## Catalog
 - [Catalog](#catalog)
