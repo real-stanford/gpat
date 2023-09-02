@@ -1,0 +1,23 @@
+name: gpat
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - tqdm
+  - pytorch
+  - torchvision
+  - scipy
+  - cudatoolkit=11.1
+  - matplotlib
+  - numpy
+  - pip
+  - python=3.6
+  - tensorboard
+  - dominate
+  - trimesh
+  - sympy
+  - pip:
+    - open3d
+    - pytorch3d
+    - cma
+    
