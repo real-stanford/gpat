@@ -1,5 +1,5 @@
 
-<h2> Rearrangement Planning for General Part Assembly </h2>
+<h1> Rearrangement Planning for General Part Assembly </h1>
 
 
 [Yulong Li](https://www.columbia.edu/~yl4095/)<sup>1</sup>,
