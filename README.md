@@ -1,21 +1,19 @@
 
 <h1> Rearrangement Planning for General Part Assembly </h1>
 
-![teaser](assets/gpat_teaser.jpg)
 
-[Yulong Li](https://www.columbia.edu/~yl4095/)<sup>1</sup>,
-[Andy Zeng](https://andyzeng.github.io)<sup>2</sup>,
-[Shuran Song](https://www.cs.columbia.edu/~shurans/)<sup>1</sup>
-<br>
-<sup>1</sup>Columbia University, <sup>2</sup> Google Deepmind
-<br>
+
+#### [Yulong Li](https://www.columbia.edu/~yl4095/)<sup>1</sup>, [Andy Zeng](https://andyzeng.github.io)<sup>2</sup>, [Shuran Song](https://www.cs.columbia.edu/~shurans/)<sup>1</sup>
+_<sup>1</sup>Columbia University, <sup>2</sup>Google Deepmind_
 
 [Project Page](https://general-part-assembly.github.io) | [arXiV](https://arxiv.org/abs/2307.00206)
+
+<h1> </h1>
+<img src="assets/gpat_teaser.jpg" alt="teaser" width="500"/>
 
 <br>
 
 ## Catalog
-- [Catalog](#catalog)
 - [Environment](#environment)
 - [Dataset](#dataset)
 - [Training and Testing](#training-and-testing)
@@ -28,21 +26,14 @@ conda env create -f environment.yml
 conda activate gpat
 pip install -e .
 ```
-Install other dependencies:
-- [chamfer](https://github.com/hyperplane-lab/Generative-3D-Part-Assembly/tree/main/exps/utils/chamfer)
+Install other dependencies ([chamfer](https://github.com/hyperplane-lab/Generative-3D-Part-Assembly/tree/main/exps/utils/chamfer) and [pointops](https://github.com/POSTECH-CVLab/point-transformer/tree/master/lib/pointops)):
 ```
 cd utils/chamfer; python setup.py install
-```
-- [pointops](https://github.com/POSTECH-CVLab/point-transformer/tree/master/lib/pointops)
-```
-cd utils/pointops; python setup.py install
+cd ../pointops; python setup.py install
 ```
 
 ## Dataset
-We create our dataset from [PartNet](https://partnet.cs.stanford.edu).
-Download our [processed partnet dataset]() to `dataset/partnet`.
-
-To recreate our data, first download PartNet v0 (annotations, meshes, point clouds, and visualizations) to `dataset/partnet_raw`. Also download [PartNet meta data](https://github.com/daerduoCarey/partnet_dataset.git) to `dataset/partnet_dataset`. Then run the following command:
+We create our dataset from [PartNet](https://partnet.cs.stanford.edu). To recreate our data, first download [PartNet v0](http://download.cs.stanford.edu/orion/partnet_dataset/data_v0.zip) to `dataset/partnet_raw`. Also download [PartNet meta data](https://github.com/daerduoCarey/partnet_dataset.git) to `dataset/partnet_dataset`. Then run the following command:
 ```python3
 python dataset/preprocess.py
 ```
@@ -69,6 +60,8 @@ python learning/assembler.py --eval --cat=CATEGORY --exp=EXPNAME --cuda=CUDAIND
 ```
 Pass in `--ratio=1` to test non-exact parts only (or another ratio from [0, 1] to indicate the probability of testing with non-exact parts). Pass in `--rand` to test targets at random poses. To evaluate with custom dataset, specify the directory containing all the data folders ([instructions](#dataset)) with `--eval_dir` (note that you cannot directly point to a single data folder). For custom model checkpoints, pass in the model path with `--model_path`. For other parameters, see `init_args()` in [learning_utils.py](learning/learning_utils.py). 
 
+
+
 ## Acknowledgements
 - [PartNet](https://partnet.cs.stanford.edu)
 - [Generative 3D Part Assembly via Dynamic Graph Learning](https://github.com/hyperplane-lab/Generative-3D-Part-Assembly)
@@ -89,3 +82,4 @@ If you find this codebase useful, feel free to cite our work!
 	organization={PMLR}
 }
 ```
+Feel free to contact [Yulong](http://yulongli42.github.io/) if you have any questions or related ideas!
